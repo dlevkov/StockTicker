@@ -1,0 +1,2 @@
+# StockTicker
+Simple exam app
