@@ -2,13 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-## Development server
+##This project hosts on [Firebase](https://clalit-like-login.firebaseapp.com/login) platform.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to `https://clalit-like-login.firebaseapp.com/` 
+or
+ `https://clalit-like-login.firebaseapp.com/login` in order to see an app
+### Current build status 
+Every git push triggers Travis CI to re-build whole app, and current status is:
 
-## Code scaffolding
+[![Build Status](https://travis-ci.org/dlevkov/Arkia-clalit-like-login.svg?branch=master)](https://travis-ci.org/dlevkov/Arkia-clalit-like-login)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Publishing process
+any push on master branch triggers CI run, then CI builds prod version and if build was success, deploys to Firebase hosting automatically
 
 ## Build
 
