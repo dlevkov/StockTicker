@@ -1,5 +1,12 @@
-.page-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.my-portfolio-container {
+  flex-grow: 1;
+}
+.selector-container {
+  flex-grow: 1;
 }

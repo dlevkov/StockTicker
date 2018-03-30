@@ -1,7 +1,6 @@
 .stock-selector{
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 .selector-title{
     font-weight: 400;
