@@ -2,11 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-##This project hosts on [Firebase](https://clalit-like-login.firebaseapp.com/login) platform.
+##This project hosts on [Firebase](https://firebase.google.com/) platform.
 
-Navigate to `https://clalit-like-login.firebaseapp.com/` 
-or
- `https://clalit-like-login.firebaseapp.com/login` in order to see an app
+Navigate to `https://stockticker-cf877.firebaseapp.com/portfolio/` 
 ### Current build status 
 Every git push triggers Travis CI to re-build whole app, and current status is:
 
