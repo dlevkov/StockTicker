@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'dl-stock-selector',
@@ -7,10 +9,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./stock-selector.component.css']
 })
 export class StockSelectorComponent implements OnInit {
-  toppings = new FormControl();
+  stockControl = new FormControl();
+  stockItems: any[];
 
-  toppingList = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-  constructor() {}
+  constructor(private db: AngularFirestore) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.db
+      .collection('stockItems')
+      .valueChanges()
+      .subscribe(x => {
+        this.stockItems = x;
+      });
+  }
 }
