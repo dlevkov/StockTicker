@@ -1,0 +1,19 @@
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title-text{
+    font-weight: 400;
+}
+.refresh-rate{
+    display: flex;
+    flex-direction: row;
+}
+.cards-container{
+    display: flex;
+    flex-direction: column;
+}
+.single-portfolio-card{
+    width: 100%;
+}
