@@ -10,7 +10,7 @@ or
 ### Current build status 
 Every git push triggers Travis CI to re-build whole app, and current status is:
 
-[![Build Status](https://travis-ci.org/dlevkov/Arkia-clalit-like-login.svg?branch=master)](https://travis-ci.org/dlevkov/Arkia-clalit-like-login)
+[![Build Status](https://travis-ci.org/dlevkov/StockTicker.svg?branch=master)](https://travis-ci.org/dlevkov/StockTicker)
 
 ## Publishing process
 any push on master branch triggers CI run, then CI builds prod version and if build was success, deploys to Firebase hosting automatically
