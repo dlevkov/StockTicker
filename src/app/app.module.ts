@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { MyPortfolioComponent } from './portfolio/my-portfolio/my-portfolio.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { DataProviderService } from './portfolio/stock-selector/data-provider.service';
 import { StockSelectorComponent } from './portfolio/stock-selector/stock-selector.component';
 
 @NgModule({
@@ -29,7 +30,7 @@ import { StockSelectorComponent } from './portfolio/stock-selector/stock-selecto
     AngularFirestoreModule,
     OrderModule
   ],
-  providers: [],
+  providers: [DataProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

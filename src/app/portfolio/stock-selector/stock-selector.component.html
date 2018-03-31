@@ -3,8 +3,8 @@
     <h2>Stock Selector</h2>
   </div>
   <mat-form-field>
-    <mat-select placeholder="Select Stock..." [formControl]="stockControl">
-      <mat-option *ngFor="let item of stockItems | orderBy: 'name'" [value]="item.name">{{item.name}}</mat-option>
+    <mat-select placeholder="Select Stock..." [formControl]="stockControl" (selectionChange)="OnClick($event)">
+      <mat-option *ngFor="let item of filteredItems | orderBy: 'name'" [value]="item.name">{{item.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <div class="notification"></div>
