@@ -7,5 +7,27 @@
   </div>
 </div>
 <div class="cards-container">
-  <mat-card class="single-portfolio-card"></mat-card>
+  <mat-card class="single-portfolio-card" *ngFor="let item of stockQuotes">
+    <mat-card-content>
+      <div class="stock-symbol">
+        <span>Stock:</span>
+        <span>{{item.symbol | uppercase}}</span>
+      </div>
+      <div class="stock-price">
+        <span>Price:</span>
+        <span>{{item.price | currency}}</span>
+      </div>
+      <div class="stock-volume">
+        <span>Volume:</span>
+        <span>{{item.volume}}</span>
+      </div>
+      <div class="last-update">
+        <span>Updated {{item.timestamp | date| timeAgo}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="removeItemByName(item.symbol)">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
 </div>

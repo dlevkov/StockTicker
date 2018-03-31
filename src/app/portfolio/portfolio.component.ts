@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
+  private selectedStockQuotes: string;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  OnSelectedQuote(e) {
+    this.selectedStockQuotes = e;
+    console.log('selected', e);
   }
-
 }

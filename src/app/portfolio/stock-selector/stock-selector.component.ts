@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -11,6 +11,7 @@ import { DataProviderService } from './data-provider.service';
   styleUrls: ['./stock-selector.component.css']
 })
 export class StockSelectorComponent implements OnInit, OnDestroy, AfterViewInit {
+  @Output() selectedStockQuote = new EventEmitter<string>();
   stockControl = new FormControl();
   stockItems: StockSelectorItem[];
   filteredItems: StockSelectorItem[];
@@ -35,10 +36,17 @@ export class StockSelectorComponent implements OnInit, OnDestroy, AfterViewInit 
     this.subscriber.unsubscribe();
   }
   OnClick(e) {
-    const foundIndex = this.stockItems.findIndex(x => x.name === e.value);
+    this.selectedStockQuote.next(e.value);
+    this.removeItemFromStockItems(e.value);
+  }
+  private removeItemFromStockItems(item: string): void {
+    const foundIndex = this.stockItems.findIndex(x => x.name === item);
     if (foundIndex >= 0) {
       this.stockItems[foundIndex].isInUse = true;
-      this.filteredItems = this.stockItems.filter(y => !y.isInUse);
+      this.updateFilteredItems();
     }
+  }
+  private updateFilteredItems(): void {
+    this.filteredItems = this.stockItems.filter(y => !y.isInUse);
   }
 }
