@@ -6,18 +6,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { OrderModule } from 'ngx-order-pipe';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { MyPortfolioComponent } from './portfolio/my-portfolio/my-portfolio.component';
+import { StockTrackerService } from './portfolio/my-portfolio/stock-tracker.service';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { DataProviderService } from './portfolio/stock-selector/data-provider.service';
 import { StockSelectorComponent } from './portfolio/stock-selector/stock-selector.component';
 
 @NgModule({
-  declarations: [AppComponent, PortfolioComponent, MyPortfolioComponent, StockSelectorComponent],
+  declarations: [
+    AppComponent,
+    PortfolioComponent,
+    MyPortfolioComponent,
+    StockSelectorComponent,
+    TimeAgoPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +38,7 @@ import { StockSelectorComponent } from './portfolio/stock-selector/stock-selecto
     AngularFirestoreModule,
     OrderModule
   ],
-  providers: [DataProviderService],
+  providers: [DataProviderService, StockTrackerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
