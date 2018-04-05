@@ -1,25 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PortfolioComponent } from './portfolio.component';
 
 describe('PortfolioComponent', () => {
-  let component: PortfolioComponent;
-  let fixture: ComponentFixture<PortfolioComponent>;
+    let comp: PortfolioComponent;
+    let fixture: ComponentFixture<PortfolioComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PortfolioComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [ PortfolioComponent ],
+            schemas: [ NO_ERRORS_SCHEMA ]
+        });
+        fixture = TestBed.createComponent(PortfolioComponent);
+        comp = fixture.componentInstance;
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PortfolioComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    it('can load instance', () => {
+        expect(comp).toBeTruthy();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
